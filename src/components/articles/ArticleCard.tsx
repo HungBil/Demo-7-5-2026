@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { bestImageUrl } from "@/lib/imageProxy";
 import type { ArticleRecord } from "@/types/article";
 
 interface ArticleCardProps {
@@ -12,7 +13,7 @@ interface ArticleCardProps {
       category?: string;
       description?: string;
     };
-    images: Array<{ absoluteSrc: string; alt?: string }>;
+    images: Array<{ absoluteSrc: string; src?: string; alt?: string; localPath?: string | null; isUIChrome?: boolean }>;
     imageCount?: number;
   };
   variant?: "grid" | "row" | "featured" | "sidebar";
@@ -34,7 +35,10 @@ function formatDate(dateStr?: string): string {
 
 export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
   const href = `/articles/${article.slug}`;
-  const heroImg = article.images?.[0];
+  // Skip UI chrome assets (logos, banners) — pick first real article photo
+  const heroImg =
+    article.images?.find((img) => !img.isUIChrome && (img.localPath || img.absoluteSrc?.includes("/wcm/connect/"))) ??
+    article.images?.[0];
   const date = formatDate(article.metadata?.publishedAt);
   const category = article.metadata?.category ?? "Tin tức";
 
@@ -45,7 +49,7 @@ export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
           {heroImg && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={heroImg.absoluteSrc}
+              src={bestImageUrl(heroImg as Parameters<typeof bestImageUrl>[0])}
               alt={heroImg.alt ?? article.title}
               className="card-row-image"
               style={{ width: 70, height: 48 }}
@@ -69,7 +73,7 @@ export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
             <div className="card-image-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={heroImg.absoluteSrc}
+                src={bestImageUrl(heroImg as Parameters<typeof bestImageUrl>[0])}
                 alt={heroImg.alt ?? article.title}
                 className="card-row-image"
                 loading="lazy"
@@ -100,7 +104,7 @@ export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
             <div className="card-image-wrap" style={{ aspectRatio: "16/9", overflow: "hidden" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={heroImg.absoluteSrc}
+                src={bestImageUrl(heroImg as Parameters<typeof bestImageUrl>[0])}
                 alt={heroImg.alt ?? article.title}
                 className="card-image"
                 loading="eager"
@@ -139,7 +143,7 @@ export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
           <div className="card-image-wrap">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={heroImg.absoluteSrc}
+              src={bestImageUrl(heroImg as Parameters<typeof bestImageUrl>[0])}
               alt={heroImg.alt ?? article.title}
               className="card-image"
               loading="lazy"

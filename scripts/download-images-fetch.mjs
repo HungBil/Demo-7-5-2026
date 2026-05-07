@@ -152,9 +152,12 @@ async function processArticle(jsonPath) {
     }
   }
 
+  // Always write JSON to persist isUIChrome flags even if no images downloaded
+  fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), "utf-8");
   if (saved > 0) {
-    fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), "utf-8");
     console.log(`  💾 JSON updated (${saved} images)`);
+  } else {
+    console.log(`  💾 JSON updated (isUIChrome flags only)`);
   }
 
   return saved;
