@@ -1,7 +1,7 @@
 "use client";
 
 import type { ArticleRecord } from "@/types/article";
-import { proxiedImageUrl, contentImages } from "@/lib/imageProxy";
+import { bestImageUrl, contentImages, buildImageUrlMap } from "@/lib/imageProxy";
 
 interface Props {
   article: ArticleRecord;
@@ -12,13 +12,13 @@ interface Props {
  * bqp.vn wraps content inside `.contentDetail` div.
  */
 function extractArticleHtml(rawHtml: string): string {
-  // Simple regex-based extraction (no DOM available in Node SSG)
+  // Primary: match contentDetail block up to file-list or author
   const match = rawHtml.match(
     /<div[^>]+class="[^"]*contentDetail[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<div[^>]+class="[^"]*file-list/
   );
   if (match) return match[1];
 
-  // Fallback: look for the title followed by content
+  // Fallback: content block followed by author paragraph
   const fallback = rawHtml.match(
     /<div[^>]+class="[^"]*contentDetail[^"]*"[^>]*>([\s\S]*?)<\/div>\s*(?:<p[^>]+class="author|<div[^>]+class="baicungchuyenmuc)/
   );
@@ -27,25 +27,42 @@ function extractArticleHtml(rawHtml: string): string {
   return ""; // Could not extract
 }
 
-/** Replace bqp.vn image srcs inside HTML with proxied URLs */
-function proxyImagesInHtml(html: string): string {
+/**
+ * Replace ALL bqp.vn image src attributes in HTML with local or proxied URLs.
+ * Uses a prebuilt map from the article's images array for accuracy.
+ */
+function replaceImageSrcsInHtml(html: string, urlMap: Map<string, string>): string {
+  // Replace src="..." where the URL is from bqp.vn
   return html.replace(
-    /src="(http:\/\/bqp\.vn\/[^"]+)"/g,
-    (_, url) => `src="${proxiedImageUrl(url)}"`
+    /src="(https?:\/\/bqp\.vn\/[^"]+)"/g,
+    (_, url) => {
+      // Decode &amp; in the HTML attribute value
+      const decoded = url.replace(/&amp;/g, "&");
+      const localUrl = urlMap.get(decoded) || urlMap.get(url);
+      if (localUrl) {
+        return `src="${localUrl}"`;
+      }
+      // Fallback: use proxy for any bqp.vn URL not in our map
+      return `src="/api/image-proxy?url=${encodeURIComponent(decoded)}"`;
+    }
   );
 }
 
 export function ArticleRenderer({ article }: Props) {
-  // Filter to content images only (no logos, banners, nav icons)
+  // Filter to article content images only (wcm/connect URLs, no UI chrome)
   const articleImages = contentImages(article.images ?? []);
   const heroImage = articleImages[0];
   const galleryImages = articleImages.slice(1);
+
+  // Build URL→localPath map for efficient HTML body replacement
+  const urlMap = buildImageUrlMap(article.images ?? []);
 
   // Extract clean article body from raw HTML
   const rawHtml = article.html ?? "";
   const bodyHtml = extractArticleHtml(rawHtml);
   const hasCleanHtml = bodyHtml.trim().length > 100;
-  const proxiedBodyHtml = hasCleanHtml ? proxyImagesInHtml(bodyHtml) : "";
+  // Replace all bqp.vn image srcs with local paths
+  const localBodyHtml = hasCleanHtml ? replaceImageSrcsInHtml(bodyHtml, urlMap) : "";
 
   // Fallback: render textContent paragraphs
   const hasText =
@@ -53,16 +70,15 @@ export function ArticleRenderer({ article }: Props) {
 
   return (
     <div className="article-body">
-      {/* Hero image */}
-      {heroImage && (
+      {/* Hero image — only shown if HTML body didn't already contain it */}
+      {heroImage && !hasCleanHtml && (
         <figure style={{ margin: "0 0 24px" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={proxiedImageUrl(heroImage.absoluteSrc)}
+            src={bestImageUrl(heroImage)}
             alt={heroImage.alt ?? article.title}
             className="article-hero-img"
             onError={(e) => {
-              // Hide broken image gracefully
               (e.currentTarget as HTMLImageElement).style.display = "none";
             }}
           />
@@ -74,11 +90,11 @@ export function ArticleRenderer({ article }: Props) {
         </figure>
       )}
 
-      {/* Article body */}
+      {/* Article body — HTML with local images injected */}
       {hasCleanHtml ? (
         <div
           className="article-content-html"
-          dangerouslySetInnerHTML={{ __html: proxiedBodyHtml }}
+          dangerouslySetInnerHTML={{ __html: localBodyHtml }}
           style={{ lineHeight: 1.85 }}
         />
       ) : hasText ? (
@@ -86,7 +102,7 @@ export function ArticleRenderer({ article }: Props) {
           {article.textContent
             .split("\n\n")
             .filter((para) => para.trim().length > 20)
-            .slice(0, 60) // safety cap
+            .slice(0, 60)
             .map((para, i) => (
               <p key={i} style={{ marginBottom: "1em" }}>
                 {para.trim()}
@@ -108,8 +124,8 @@ export function ArticleRenderer({ article }: Props) {
         </p>
       )}
 
-      {/* Additional images gallery — only if we have >1 content image */}
-      {galleryImages.length > 0 && (
+      {/* Gallery — only for articles without clean HTML (text-only fallback) */}
+      {!hasCleanHtml && galleryImages.length > 0 && (
         <div style={{ marginTop: 40 }}>
           <div
             style={{
@@ -136,7 +152,7 @@ export function ArticleRenderer({ article }: Props) {
               <figure key={img.id} style={{ margin: 0 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={proxiedImageUrl(img.absoluteSrc)}
+                  src={bestImageUrl(img)}
                   alt={img.alt ?? ""}
                   loading="lazy"
                   style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover" }}

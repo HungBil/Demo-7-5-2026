@@ -12,7 +12,7 @@ build/
 .local-ai/
 .claude/
 .gemini/
+# bqp-corpus is generated at build time via scripts
 data/bqp-corpus.json
-public/images/*
-!public/images/.gitkeep
-src/data/articles/*.json
+# Article JSON and images ARE committed — required for Vercel static serving
+# public/images/ and src/data/articles/*.json are NOT ignored

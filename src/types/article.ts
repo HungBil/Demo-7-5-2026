@@ -14,6 +14,16 @@ export interface ArticleImage {
   src: string;
   /** Resolved absolute URL, required for rendering */
   absoluteSrc: string;
+  /**
+   * Local path within /public (e.g. /images/articles/slug/filename.jpg).
+   * Set by the download-images script. When present, use this instead of proxy.
+   */
+  localPath?: string | null;
+  /**
+   * True if this image is a UI chrome asset (logo, banner, nav icon).
+   * Set by the download-images script. Such images should not be rendered.
+   */
+  isUIChrome?: boolean;
   alt?: string;
   caption?: string;
   width?: number;
