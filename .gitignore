@@ -15,3 +15,4 @@ build/
 data/bqp-corpus.json
 public/images/*
 !public/images/.gitkeep
+src/data/articles/*.json
