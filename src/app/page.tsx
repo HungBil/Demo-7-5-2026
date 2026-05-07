@@ -2,6 +2,7 @@ import Link from "next/link";
 import { loadArticles } from "@/server/articles/loadArticles";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { ArticleCard } from "@/components/articles/ArticleCard";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 export const revalidate = 3600; // ISR: revalidate hourly
 
@@ -112,6 +113,7 @@ export default async function HomePage() {
           </>
         )}
       </div>
+      <ChatWidget />
     </PageLayout>
   );
 }

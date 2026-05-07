@@ -1,70 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-
-/** Lightweight markdown → React renderer (bold, italic, code, lists, numbered) */
-function renderMarkdown(text: string): React.ReactNode {
-  const lines = text.split("\n");
-  const nodes: React.ReactNode[] = [];
-  let i = 0;
-
-  function inlineFormat(line: string, key: string | number): React.ReactNode {
-    // Split by **bold**, *italic*, `code` patterns
-    const parts: React.ReactNode[] = [];
-    const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`)/g;
-    let last = 0;
-    let m: RegExpExecArray | null;
-    let idx = 0;
-    while ((m = regex.exec(line)) !== null) {
-      if (m.index > last) parts.push(line.slice(last, m.index));
-      if (m[2]) parts.push(<strong key={`${key}-b${idx++}`}>{m[2]}</strong>);
-      else if (m[3]) parts.push(<em key={`${key}-i${idx++}`}>{m[3]}</em>);
-      else if (m[4]) parts.push(<code key={`${key}-c${idx++}`} style={{background:"rgba(0,0,0,.08)",padding:"1px 4px",borderRadius:3,fontFamily:"monospace",fontSize:"0.85em"}}>{m[4]}</code>);
-      last = m.index + m[0].length;
-    }
-    if (last < line.length) parts.push(line.slice(last));
-    return parts.length === 1 ? parts[0] : <span key={key}>{parts}</span>;
-  }
-
-  while (i < lines.length) {
-    const line = lines[i];
-    const trimmed = line.trim();
-
-    if (!trimmed) { nodes.push(<br key={`br-${i}`} />); i++; continue; }
-
-    // Numbered list item
-    const numMatch = trimmed.match(/^(\d+)\.\s+(.+)$/);
-    if (numMatch) {
-      const listItems: React.ReactNode[] = [];
-      while (i < lines.length && lines[i].trim().match(/^\d+\.\s+/)) {
-        const m2 = lines[i].trim().match(/^\d+\.\s+(.+)$/)!;
-        listItems.push(<li key={i}>{inlineFormat(m2[1], `li-${i}`)}</li>);
-        i++;
-      }
-      nodes.push(<ol key={`ol-${i}`} style={{paddingLeft:"1.4em",margin:"4px 0"}}>{listItems}</ol>);
-      continue;
-    }
-
-    // Bullet list item
-    if (trimmed.startsWith("- ") || trimmed.startsWith("• ")) {
-      const listItems: React.ReactNode[] = [];
-      while (i < lines.length && (lines[i].trim().startsWith("- ") || lines[i].trim().startsWith("• "))) {
-        const content = lines[i].trim().replace(/^[-•]\s+/, "");
-        listItems.push(<li key={i}>{inlineFormat(content, `li-${i}`)}</li>);
-        i++;
-      }
-      nodes.push(<ul key={`ul-${i}`} style={{paddingLeft:"1.4em",margin:"4px 0"}}>{listItems}</ul>);
-      continue;
-    }
-
-    // Normal paragraph line
-    nodes.push(<p key={i} style={{margin:"2px 0"}}>{inlineFormat(trimmed, i)}</p>);
-    i++;
-  }
-
-  return <>{nodes}</>;
-}
-
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Citation {
   title: string;
@@ -172,9 +110,9 @@ export function ChatWidget({ articleSlug }: ChatWidgetProps) {
                   msg.role === "user" ? "chat-msg-user" : "chat-msg-assistant"
                 }`}
               >
-                <div className={`chat-msg-content`}>
+                <div className={`chat-msg-content markdown-body`}>
                   {msg.role === "assistant"
-                    ? renderMarkdown(msg.content)
+                    ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
                     : msg.content}
                 </div>
                 {msg.citations && msg.citations.length > 0 && (

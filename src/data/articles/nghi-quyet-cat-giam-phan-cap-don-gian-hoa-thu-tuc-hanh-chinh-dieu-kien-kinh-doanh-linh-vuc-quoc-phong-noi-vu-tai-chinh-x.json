@@ -10,97 +10,116 @@
     {
       "id": "a322f8769041e503",
       "src": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/logo.jpg",
-      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/logo.jpg"
+      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/logo.jpg",
+      "isUIChrome": true
     },
     {
       "id": "0ad6bccea036b3d1",
       "src": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/banner600.jpg",
-      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/banner600.jpg"
+      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/banner600.jpg",
+      "isUIChrome": true
     },
     {
       "id": "6fb19e5bf8b1c071",
       "src": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm",
+      "isUIChrome": true
     },
     {
       "id": "447790a50c75c5b0",
       "src": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn",
+      "isUIChrome": true
     },
     {
       "id": "87067411d8077eb4",
       "src": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ",
+      "isUIChrome": true
     },
     {
       "id": "29b66de781d9781b",
       "src": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG",
+      "isUIChrome": true
     },
     {
       "id": "576d9d2b481dfe33",
       "src": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl",
+      "isUIChrome": true
     },
     {
       "id": "ba0bf2ffd52788dd",
       "src": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC",
+      "isUIChrome": true
     },
     {
       "id": "6cfa98ce3a662a94",
       "src": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb",
+      "isUIChrome": true
     },
     {
       "id": "60600ddd3af94914",
       "src": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA",
+      "isUIChrome": true
     },
     {
       "id": "a0e1bb6858edaa55",
       "src": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/icon-search.png",
-      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/icon-search.png"
+      "absoluteSrc": "http://bqp.vn/contenthandler/dav/themelist/ibm.portal.85Theme.mod/template/img/icon-search.png",
+      "isUIChrome": true
     },
     {
       "id": "8b667a9959b76cdc",
       "src": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c/TrangcongTP1.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-61fe6d3c-1f86-4b48-9c1c-d3c36b0c933c-pNaL6rm",
+      "isUIChrome": true
     },
     {
       "id": "44505ebfa98498a5",
       "src": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/5d3249fa-94e6-4b7b-b929-abe76bbaecf4/KVCB-HCBtq.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-5d3249fa-94e6-4b7b-b929-abe76bbaecf4-pxUD0Nn",
+      "isUIChrome": true
     },
     {
       "id": "1c90196a4fba6736",
       "src": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/1b4812f2-3f62-4172-9cbd-fef6d3e29d81/bnqc-6.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-1b4812f2-3f62-4172-9cbd-fef6d3e29d81-pxUDhnZ",
+      "isUIChrome": true
     },
     {
       "id": "e94436fb03039f00",
       "src": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/3ab389e8-ca78-47ca-bc60-002ef9a234d7/NtBDHVS.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-3ab389e8-ca78-47ca-bc60-002ef9a234d7-pxUA1rG",
+      "isUIChrome": true
     },
     {
       "id": "6cbfcb4013e5b011",
       "src": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/01a043a6-e749-4768-aad0-c357a2852dee/bnqc-3.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-01a043a6-e749-4768-aad0-c357a2852dee-pxUDGFl",
+      "isUIChrome": true
     },
     {
       "id": "a89d8be0017d78db",
       "src": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/4b813971-70f4-4a21-b860-5995f85cc5c3/bnqc-5.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-4b813971-70f4-4a21-b860-5995f85cc5c3-pxUDJlC",
+      "isUIChrome": true
     },
     {
       "id": "73c65663ec5d9ca3",
       "src": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/78bf736f-986b-4662-9f7d-70b62bc1942d/bnqc-7.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-78bf736f-986b-4662-9f7d-70b62bc1942d-pxUDLIb",
+      "isUIChrome": true
     },
     {
       "id": "5b4b6f5895f52afb",
       "src": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA",
-      "absoluteSrc": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA"
+      "absoluteSrc": "http://bqp.vn/wcm/connect/31331703-6d70-44b9-975a-e54d8422a2d3/PAKNvbQPPL.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-31331703-6d70-44b9-975a-e54d8422a2d3-pxUDPgA",
+      "isUIChrome": true
     }
   ],
   "metadata": {

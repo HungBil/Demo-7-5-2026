@@ -36,9 +36,7 @@ function formatDate(dateStr?: string): string {
 export function ArticleCard({ article, variant = "grid" }: ArticleCardProps) {
   const href = `/articles/${article.slug}`;
   // Skip UI chrome assets (logos, banners) — pick first real article photo
-  const heroImg =
-    article.images?.find((img) => !img.isUIChrome && (img.localPath || img.absoluteSrc?.includes("/wcm/connect/"))) ??
-    article.images?.[0];
+  const heroImg = article.images?.find((img) => !img.isUIChrome);
   const date = formatDate(article.metadata?.publishedAt);
   const category = article.metadata?.category ?? "Tin tức";
 

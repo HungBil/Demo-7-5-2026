@@ -534,13 +534,19 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .chat-toggle:hover { background: var(--color-primary-dark); }
 .chat-panel {
-  width: 340px;
+  width: min(600px, 90vw);
   background: var(--color-surface);
   border: 2px solid var(--color-dark);
   display: flex;
   flex-direction: column;
-  max-height: 480px;
+  height: 600px;
+  max-height: 85vh;
   overflow: hidden;
+}
+.chat-panel img {
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
 }
 .chat-header {
   background: var(--color-dark);
@@ -592,6 +598,21 @@ img { display: block; max-width: 100%; height: auto; }
   color: var(--color-text);
   padding: 8px 12px;
   border-left: 3px solid var(--color-primary);
+}
+.markdown-body p {
+  margin-bottom: 0.5em;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 0.5em 0;
 }
 .chat-citation {
   font-size: var(--fs-xs);

@@ -16,3 +16,6 @@ build/
 data/bqp-corpus.json
 # Article JSON and images ARE committed — required for Vercel static serving
 # public/images/ and src/data/articles/*.json are NOT ignored
+
+.vercel
+*.tsbuildinfo
