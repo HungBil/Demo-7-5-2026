@@ -67,7 +67,7 @@ export async function crawlArticle(
       html = result.html || '';
 
       // Extract metadata from Firecrawl response
-      const meta = (result as Record<string, unknown>).metadata as Record<string, string> | undefined;
+      const meta = ((result as unknown) as Record<string, unknown>).metadata as Record<string, string> | undefined;
       title = meta?.['og:title'] || meta?.['title'] || extractTitleFromMarkdown(markdown);
       description = meta?.['og:description'] || meta?.['description'] || '';
       publishedAt = meta?.['article:published_time'] || meta?.['publishedTime'] || undefined;
